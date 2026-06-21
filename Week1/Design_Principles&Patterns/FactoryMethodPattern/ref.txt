@@ -1,0 +1,22 @@
+/*
+ * Factory Method Pattern:
+ *
+ * 1. The Factory Method Pattern defines an interface for creating objects
+ *    but lets subclasses decide which class to instantiate.
+ *
+ * 2. The Document interface acts as the common type for all documents.
+ *
+ * 3. WordDocument, PdfDocument, and ExcelDocument are concrete document classes.
+ *
+ * 4. DocumentFactory is an abstract factory class containing the
+ *    factory method createDocument().
+ *
+ * 5. WordFactory, PdfFactory, and ExcelFactory override createDocument()
+ *    to create their respective document objects.
+ *
+ * 6. The client interacts with the factory classes rather than directly
+ *    creating document objects.
+ *
+ * 7. This improves flexibility, maintainability, and scalability of
+ *    the application.
+ */
