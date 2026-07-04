@@ -1,0 +1,60 @@
+Difference between JPA, Hibernate and Spring Data JPA
+
+JPA, Hibernate, and Spring Data JPA are technologies used in Java applications to simplify 
+database operations. They are related to each other but have different responsibilities.
+
+JPA (Java Persistence API) is a specification provided by Java for managing relational 
+data in Java applications. It defines a standard set of rules and interfaces for mapping Java 
+objects to database tables and performing database operations. JPA itself does not provide any 
+implementation. It only defines how persistence should work. To use JPA, we need an implementation
+ provider such as Hibernate. Common JPA annotations include @Entity, @Table, @Id, and @Column, 
+ which are used to map Java classes and fields with database tables and columns.
+
+Hibernate is an Object Relational Mapping (ORM) framework and one of the most popular 
+implementations of the JPA specification. It provides the actual logic required to interact 
+with the database. Hibernate converts Java objects into database records and database records 
+back into Java objects. It automatically generates SQL queries, manages database connections, 
+handles transactions, and reduces the need to write JDBC code manually. Hibernate allows developers 
+to work with objects instead of directly writing SQL queries for every operation.
+
+Spring Data JPA is an abstraction layer built on top of JPA and JPA implementations like Hibernate. 
+It simplifies database access by reducing repetitive code. Instead of manually creating DAO classes 
+and writing common database operations, Spring Data JPA provides repository interfaces such as 
+JpaRepository. By extending these repositories, developers get built-in methods like save(), 
+findAll(), findById(), and deleteById() without writing their implementation. It also manages 
+transactions and integrates easily with Spring Boot applications.
+
+In a Spring Boot application, Spring Data JPA communicates with JPA, and Hibernate works 
+internally as the JPA implementation to perform database operations.
+
+The relationship can be represented as:
+
+Spring Data JPA
+        ↓
+       JPA
+        ↓
+    Hibernate
+        ↓
+     Database
+
+Example:
+
+Using Hibernate directly requires creating sessions, beginning transactions, saving objects, 
+committing transactions, and closing sessions manually.
+
+Using Spring Data JPA:
+
+countryRepository.save(country);
+
+is enough to store data because Spring Data JPA internally uses Hibernate to complete the operation.
+
+In simple terms:
+
+JPA defines the rules for object persistence.
+Hibernate implements those rules and performs ORM operations.
+Spring Data JPA simplifies the usage of JPA and Hibernate by removing boilerplate code 
+through repository interfaces.
+
+Therefore, JPA is a specification, Hibernate is the implementation of that specification, 
+and Spring Data JPA is a higher-level abstraction that makes database development faster and 
+easier in Spring applications.
