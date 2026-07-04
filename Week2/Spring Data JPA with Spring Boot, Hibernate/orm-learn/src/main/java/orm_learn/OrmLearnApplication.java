@@ -18,7 +18,7 @@ public class OrmLearnApplication {
     private static CountryService countryService;
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
 
         ApplicationContext context =
@@ -33,6 +33,13 @@ public class OrmLearnApplication {
 
 
         testGetAllCountries();
+		testFindCountryByCode();
+		testAddCountry();
+
+		Country country = countryService.findCountryByCode("IN");
+		
+		System.out.println(
+			country.getStates());
 
     }
 
@@ -50,5 +57,47 @@ public class OrmLearnApplication {
 
         System.out.println("END");
     }
+
+
+	private static void testFindCountryByCode() throws Exception {
+
+    System.out.println("START");
+
+
+    Country country =
+        countryService.findCountryByCode("IN");
+
+
+    System.out.println(country);
+
+
+    System.out.println("END");
+    }
+
+	private static void testAddCountry() 
+        throws Exception {
+
+    System.out.println("Start");
+
+
+    Country country = new Country();
+
+    country.setCode("JP");
+    country.setName("Japan");
+
+
+    countryService.addCountry(country);
+
+
+    Country result =
+        countryService.findCountryByCode("JP");
+
+
+    System.out.println(result);
+
+
+    System.out.println("End");
+    }
+	
 
 }

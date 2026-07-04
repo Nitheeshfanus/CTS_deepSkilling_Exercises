@@ -2,8 +2,15 @@ package orm_learn.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
+import java.util.List;
+
+import jakarta.persistence.OneToMany;
+
+import jakarta.persistence.FetchType;
 
 @Entity
 @Table(name = "country")
@@ -15,6 +22,12 @@ public class Country {
 
     @Column(name = "co_name")
     private String name;
+
+    @OneToMany(
+    mappedBy = "country",
+    fetch = FetchType.EAGER
+    )
+    private List<State> states;
 
     
 
@@ -40,6 +53,14 @@ public class Country {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<State> getStates() {
+    return states;
+    }
+    
+    public void setStates(List<State> states) {
+    this.states = states;
     }
 
     @Override
