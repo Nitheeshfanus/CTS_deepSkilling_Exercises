@@ -11,7 +11,7 @@
 
 
     <bean id="country"
-          class="com.REST.Country">
+          class="com.cognizant.REST.Country">
 
 
         <property name="code" value="IN"/>
