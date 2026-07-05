@@ -42,7 +42,7 @@ public class CountryController {
                         "country.xml"
                 );
 
-
+                
         Country country =
                 context.getBean(
                         "country",
@@ -56,8 +56,6 @@ public class CountryController {
         return country;
 
     }
-
-
 
     @GetMapping("/countries/{code}")
     public Country getCountry(

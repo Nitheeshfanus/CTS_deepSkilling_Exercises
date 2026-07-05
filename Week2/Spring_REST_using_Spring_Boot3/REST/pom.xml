@@ -30,23 +30,99 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-webmvc</artifactId>
-		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-webmvc-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+
+	<!-- Spring Web -->
+
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-webmvc</artifactId>
+	</dependency>
+
+
+
+	<!-- Dev Tools -->
+
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-devtools</artifactId>
+		<scope>runtime</scope>
+		<optional>true</optional>
+	</dependency>
+
+
+
+	<!-- Test -->
+
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-webmvc-test</artifactId>
+		<scope>test</scope>
+	</dependency>
+
+
+
+	<!-- Spring Security -->
+
+	<dependency>
+
+		<groupId>org.springframework.boot</groupId>
+
+		<artifactId>spring-boot-starter-security</artifactId>
+
+	</dependency>
+
+
+
+
+	<!-- JWT API -->
+
+	<dependency>
+
+		<groupId>io.jsonwebtoken</groupId>
+
+		<artifactId>jjwt-api</artifactId>
+
+		<version>0.12.5</version>
+
+	</dependency>
+
+
+
+
+	<!-- JWT Implementation -->
+
+	<dependency>
+
+		<groupId>io.jsonwebtoken</groupId>
+
+		<artifactId>jjwt-impl</artifactId>
+
+		<version>0.12.5</version>
+
+		<scope>runtime</scope>
+
+	</dependency>
+
+
+
+
+	<!-- JWT JSON Support -->
+
+	<dependency>
+
+		<groupId>io.jsonwebtoken</groupId>
+
+		<artifactId>jjwt-jackson</artifactId>
+
+		<version>0.12.5</version>
+
+		<scope>runtime</scope>
+
+	</dependency>
+
+
+</dependencies>
 
 	<build>
 		<plugins>
@@ -56,5 +132,7 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	
 
 </project>
